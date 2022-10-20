@@ -6,32 +6,32 @@ Dichiariamo chi ha vinto.*/
 
 
 const pariDispari = prompt('pari o dispari');
-console.log(pariDispari);
-
 const numUtente = parseInt(prompt('inserisci un numero da 1 a 5'));
-console.log(numUtente);
+const numPc= random(1, 5);
+const somma = numUtente + numPc;
 
-const num3 = random(numPc);
+const risultato = (somma % 2) ? 'DISPARI' : 'PARI';
+const vincitore = controllo(sceltaUtente, risultato);
 
-function random (){
-  numPc = Math.round(Math.random()*5);
-  console.log('numero ', numPc);
-  return numPc;
+function random (max, min){
+  return  Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-random();
+function controllo(scelta, pari_dispari){
+  if(scelta.toUpperCase() === pari_dispari) return 'Vince l\'utente';
+  return 'Vince il computer';
+ }
+
+ function checkPariDispari(num){
+  if(num % 2) return 'DISPARI';
+  return 'PARI';
+ }
 
 
 
-function somma(num3, numUtente) {
-  var risultato ='';
-  var x;
-  var y;
-  risultato = x+y;
-  console.log('la somma è', risultato);
-  return risultato;
-}
-somma();
+
+
+
 
 
 
